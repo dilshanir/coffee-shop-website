@@ -1,0 +1,38 @@
+<svg viewBox="0 0 800 600" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+  <rect width="800" height="600" fill="#F3ECE2"/>
+  <rect x="20" y="20" width="760" height="560" rx="12" fill="none" stroke="#E6DDD2" stroke-width="2" stroke-dasharray="8 8"/>
+  
+  <!-- Subtle line illustration: Cozy armchair, side table, book & mug -->
+  <g stroke="#6E6157" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none" opacity="0.75">
+    <!-- Armchair -->
+    <path d="M260 420 L260 280 C260 250, 310 240, 370 240 C430 240, 480 250, 480 280 L480 420 Z"/>
+    <path d="M240 330 C240 310, 260 300, 270 300 L270 410 L240 410 Z"/>
+    <path d="M500 330 C500 310, 480 300, 470 300 L470 410 L500 410 Z"/>
+    <path d="M280 380 L460 380"/>
+    <line x1="280" y1="420" x2="265" y2="470"/>
+    <line x1="460" y1="420" x2="475" y2="470"/>
+    
+    <!-- Low Side Table -->
+    <path d="M520 370 L600 370"/>
+    <line x1="535" y1="370" x2="525" y2="470"/>
+    <line x1="585" y1="370" x2="595" y2="470"/>
+
+    <!-- Small Ceramic Cup on Table -->
+    <path d="M555 352 L570 352 L568 368 L557 368 Z" fill="#7C8D78" opacity="0.5"/>
+    <path d="M560 344 C558 340, 563 336, 561 332" stroke="#7C8D78" stroke-width="1.5"/>
+
+    <!-- Plant Leaves -->
+    <path d="M210 470 C210 390, 180 360, 190 320" stroke="#7C8D78"/>
+    <ellipse cx="180" cy="340" rx="20" ry="10" transform="rotate(-30 180 340)" fill="#7C8D78" opacity="0.3"/>
+    <ellipse cx="205" cy="370" rx="18" ry="9" transform="rotate(25 205 370)" fill="#7C8D78" opacity="0.3"/>
+    <ellipse cx="175" cy="400" rx="22" ry="11" transform="rotate(-15 175 400)" fill="#7C8D78" opacity="0.3"/>
+  </g>
+
+  <!-- Calm Editorial Tag -->
+  <text x="400" y="520" text-anchor="middle" font-family="'Plus Jakarta Sans', sans-serif" font-size="14" font-weight="500" fill="#6E6157" letter-spacing="1.5">
+    [PLACEHOLDER] THE READING NOOK &amp; QUIET CORNERS
+  </text>
+  <text x="400" y="545" text-anchor="middle" font-family="'Cormorant Garamond', serif" font-size="16" font-style="italic" fill="#9E9186">
+    Natural linen, warm timber, and soft shadows for reading
+  </text>
+</svg>
