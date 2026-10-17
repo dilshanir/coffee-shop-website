@@ -21,14 +21,242 @@
   <!-- Accessible Skip Navigation -->
   <a href="#main-content" class="skip-link">Skip to main content</a>
 
-  <!-- Global Header / Navigation Frame -->
-  <header id="site-header" role="banner">
-    <!-- Header elements will be populated here -->
+  <!-- Global Header & Navigation -->
+  <header id="site-header" class="site-header" role="banner">
+    <div class="header-container">
+      <div class="brand-group">
+        <a href="#welcome" class="brand-logo" aria-label="Mandora Home">
+          <span class="brand-name">Mandora</span>
+          <span class="brand-sub">Colombo 02 • 5th Floor</span>
+        </a>
+      </div>
+
+      <!-- Live Sanctuary Status -->
+      <div class="header-status" id="header-status" aria-live="polite">
+        <span class="status-dot" aria-hidden="true"></span>
+        <span class="status-text" id="status-text">Open today until 9:00 PM</span>
+      </div>
+
+      <nav class="site-nav" aria-label="Primary Navigation">
+        <ul class="nav-list">
+          <li><a href="#story" class="nav-link">Our Story</a></li>
+          <li><a href="#menu" class="nav-link">Menu</a></li>
+          <li><a href="#experience" class="nav-link">The Space</a></li>
+          <li><a href="#visit" class="nav-link">Visit</a></li>
+        </ul>
+      </nav>
+
+      <!-- Miniature "Slow Pour" Scroll Cup Indicator -->
+      <div class="header-pour-indicator" title="Scroll pour indicator" aria-hidden="true">
+        <svg class="mini-pour-cup" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <!-- Cup Outline -->
+          <path d="M7 10h14v10a6 6 0 0 1-6 6h-2a6 6 0 0 1-6-6V10z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M21 12h2.5a3.5 3.5 0 0 1 0 7H21" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M4 27h20" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+          <!-- Masked Coffee Level -->
+          <defs>
+            <clipPath id="miniCupClip">
+              <path d="M8 11h12v9a5 5 0 0 1-5 5h-2a5 5 0 0 1-5-5V11z"/>
+            </clipPath>
+          </defs>
+          <rect id="mini-coffee-fill" x="7" y="25" width="14" height="15" fill="var(--color-accent)" clip-path="url(#miniCupClip)" />
+        </svg>
+      </div>
+    </div>
+    <!-- Subtle Scroll Progress Bar Line -->
+    <div class="scroll-progress-line" id="scroll-progress-line" role="progressbar" aria-label="Reading progress" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
   </header>
 
   <!-- Main Scroll Story Container -->
   <main id="main-content" role="main">
-    <!-- Sections will unfold here -->
+    <!-- Section 1: Welcome & Signature Creative Opening -->
+    <section id="welcome" class="welcome-section" aria-labelledby="welcome-heading">
+      <div class="welcome-container">
+        
+        <!-- Time-of-day greeting & Returning visitor badge -->
+        <div class="welcome-meta-wrapper">
+          <div class="welcome-greeting-pill" id="time-greeting-pill">
+            <span class="greeting-icon" aria-hidden="true">✦</span>
+            <span id="time-greeting-text">Morning light over Nawam Mawatha</span>
+          </div>
+          <div class="welcome-visitor-badge" id="visitor-badge" style="display: none;">
+            <span>Welcome back to your quiet corner</span>
+          </div>
+        </div>
+
+        <!-- Primary Heading -->
+        <h1 id="welcome-heading" class="welcome-title">
+          A quiet sanctuary <br class="title-break">on the fifth floor.
+        </h1>
+
+        <!-- Poetic Sub-copy -->
+        <p class="welcome-narrative">
+          Perched above Colombo’s rhythm, Mandora is an unhurried pause. We pour slow coffee, brew handpicked teas, and hold space for conversations that take their time.
+        </p>
+
+        <!-- Signature Creative Element: Handcrafted Cup with Rising Steam -->
+        <div class="steam-cup-stage" aria-label="Handcrafted coffee cup with steam softly rising">
+          <svg class="steam-illustration" viewBox="0 0 280 260" fill="none" xmlns="http://www.w3.org/2000/svg" role="img">
+            <title>A steaming ceramic coffee cup at Mandora</title>
+            
+            <!-- Steam Ribbons (Soft, slow CSS animation) -->
+            <g class="steam-group" aria-hidden="true">
+              <!-- Stream 1 (Left gentle wave) -->
+              <path class="steam-stream steam-1" d="M125 140 C 115 110, 135 85, 120 50 C 110 25, 125 10, 118 0" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              <!-- Stream 2 (Center calm curl) -->
+              <path class="steam-stream steam-2" d="M140 135 C 150 105, 130 75, 145 45 C 155 25, 138 12, 142 2" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>
+              <!-- Stream 3 (Right soft wave) -->
+              <path class="steam-stream steam-3" d="M155 140 C 168 115, 148 88, 162 55 C 172 32, 158 15, 166 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+            </g>
+
+            <!-- Ceramic Cup & Saucer Artwork (Earthy, tactile linework) -->
+            <g class="cup-group">
+              <!-- Saucer -->
+              <ellipse cx="140" cy="222" rx="72" ry="10" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+              <ellipse cx="140" cy="223" rx="55" ry="6" stroke="currentColor" stroke-width="1.2" opacity="0.4"/>
+              
+              <!-- Saucer shadow / base -->
+              <path d="M90 224 C 115 233, 165 233, 190 224" stroke="currentColor" stroke-width="2" stroke-linecap="round" opacity="0.3"/>
+
+              <!-- Cup Body -->
+              <path d="M96 150 C 98 194, 114 216, 140 216 C 166 216, 182 194, 184 150 Z" stroke="currentColor" stroke-width="2.5" stroke-linejoin="round" fill="var(--color-bg-base)"/>
+              
+              <!-- Cup Rim Ellipse -->
+              <ellipse cx="140" cy="150" rx="44" ry="11" stroke="currentColor" stroke-width="2.5" fill="var(--color-bg-surface)"/>
+              
+              <!-- Warm Coffee Surface inside the Rim -->
+              <ellipse cx="140" cy="152" rx="36" ry="7.5" fill="var(--color-text-main)" opacity="0.85"/>
+              <ellipse cx="137" cy="151" rx="28" ry="4.5" fill="#4A3B32" opacity="0.5"/>
+              <ellipse cx="135" cy="150" rx="14" ry="2.2" fill="var(--color-accent)" opacity="0.35"/>
+
+              <!-- Cup Handle -->
+              <path d="M182 158 C 205 160, 206 190, 178 198" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+              <path d="M181 165 C 196 167, 197 184, 179 191" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" opacity="0.5" fill="none"/>
+
+              <!-- Minimal ceramic tactile accent (Gentle glaze line) -->
+              <path d="M110 188 C 128 194, 152 194, 170 188" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" opacity="0.25"/>
+            </g>
+          </svg>
+        </div>
+
+        <!-- Calm Scroll Guidance -->
+        <div class="welcome-scroll-hint">
+          <a href="#story" class="scroll-link" aria-label="Scroll down to begin our story">
+            <span class="scroll-text">Step inside slowly</span>
+            <span class="scroll-arrow" aria-hidden="true">
+              <svg width="18" height="24" viewBox="0 0 18 24" fill="none">
+                <path d="M9 2V18M9 18L3 12M9 18L15 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </span>
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Section 2: Our Story (Origins, Philosophy & Secret Easter Egg) -->
+    <section id="story" class="story-section" aria-labelledby="story-heading">
+      <div class="story-container">
+        
+        <!-- Subtle Section Label -->
+        <div class="section-label-bar reveal-on-scroll">
+          <span class="section-badge">Chapter 01</span>
+          <span class="section-separator" aria-hidden="true">—</span>
+          <span class="section-subtitle">Origins & Philosophy</span>
+        </div>
+
+        <div class="story-grid">
+          <!-- Primary Editorial Column -->
+          <div class="story-editorial-col reveal-on-scroll">
+            <h2 id="story-heading" class="story-title">
+              Time moves swiftly along Nawam Mawatha. <br class="title-break">Here, it learns to breathe.
+            </h2>
+            
+            <p class="story-lead">
+              Mandora was founded on a simple desire: to carve out a peaceful haven high above Colombo’s bustling streets — a place where the rich aroma of hand-poured coffee meets an unhurried, gentle silence.
+            </p>
+
+            <!-- Warm Highlight Quote Card -->
+            <div class="story-quote-card">
+              <div class="quote-mark" aria-hidden="true">“</div>
+              <blockquote class="quote-text">
+                We do not hurry our brews, and we will never rush your stay.
+              </blockquote>
+              <cite class="quote-signature">— Mandora Philosophy</cite>
+            </div>
+          </div>
+
+          <!-- Secondary Narrative Column & Philosophy Pillars -->
+          <div class="story-details-col reveal-on-scroll">
+            <div class="story-narrative-block">
+              <p>
+                Perched on the 5th floor of the IBM Building, our windows overlook the quiet ripples of Beira Lake and the tree-lined avenues of Colombo 02. Every cup we serve is made with deliberate care: single-origin beans sourced responsibly from highland estates, roasted gently to celebrate their native fruit and honey notes.
+              </p>
+              <p>
+                From the cool touch of our custom handmade ceramics to the gentle hum of morning light, every detail is crafted to invite you to pause, sip, and exhale.
+              </p>
+            </div>
+
+            <!-- Three Quiet Pillars -->
+            <div class="philosophy-pillars">
+              <div class="pillar-card">
+                <span class="pillar-num">01</span>
+                <div class="pillar-info">
+                  <h3 class="pillar-name">Small-Batch Harvests</h3>
+                  <p class="pillar-desc">Highland beans roasted in small runs to preserve delicate nuances of stonefruit and roasted almond.</p>
+                </div>
+              </div>
+
+              <div class="pillar-card">
+                <span class="pillar-num">02</span>
+                <div class="pillar-info">
+                  <h3 class="pillar-name">Tactile Ceramics</h3>
+                  <p class="pillar-desc">Wheel-thrown local pottery designed with comforting organic textures that cradle warmth in your palms.</p>
+                </div>
+              </div>
+
+              <div class="pillar-card">
+                <span class="pillar-num">03</span>
+                <div class="pillar-info">
+                  <h3 class="pillar-name">Space to Simply Be</h3>
+                  <p class="pillar-desc">No loud machines, no hurried turnaround. Bring your favorite novel or gaze at the clouds over Colombo.</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Signature Interactive Easter Egg: The Hidden Coffee Bean -->
+            <div class="easter-egg-section" id="easter-egg-box">
+              <div class="bean-interactive-container">
+                <button type="button" class="bean-button" id="secret-bean-btn" aria-expanded="false" aria-controls="secret-bean-reflection" aria-label="Touch the coffee bean to reveal a quiet thought">
+                  <svg class="bean-svg" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <!-- Handcrafted organic bean silhouette -->
+                    <path d="M16 3C8.82 3 3 8.82 3 16C3 23.18 8.82 29 16 29C23.18 29 29 23.18 29 16C29 8.82 23.18 3 16 3Z" stroke="currentColor" stroke-width="1.8" fill="var(--color-bg-surface)"/>
+                    <path d="M16 6C18.5 10.5 13.5 14.5 16 19.5C17.5 22.5 15.5 25.5 16 26" stroke="var(--color-accent)" stroke-width="2" stroke-linecap="round"/>
+                  </svg>
+                  <span class="bean-hint">A quiet secret rests here — touch the bean</span>
+                </button>
+              </div>
+
+              <!-- Unfolded Reflection Card -->
+              <div class="secret-reflection-modal" id="secret-bean-reflection" role="region" aria-live="polite" hidden>
+                <div class="reflection-content">
+                  <div class="reflection-header">
+                    <span class="reflection-title-tag">✦ Daily Reflection</span>
+                    <button type="button" class="reflection-dismiss" id="close-reflection-btn" aria-label="Close daily reflection">Close ✕</button>
+                  </div>
+                  <p class="reflection-text" id="reflection-quote-text">
+                    "A good cup of coffee takes four minutes to brew and a lifetime of unhurried mornings to appreciate."
+                  </p>
+                  <span class="reflection-footer">Mandora Quiet Notes</span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
   </main>
 
   <!-- Warm Footer / Closing Frame -->
