@@ -8,6 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initScrollPourProgress();
   initScrollReveals();
   initEasterEgg();
+  initMenuFiltering();
 });
 
 /**
@@ -206,4 +207,42 @@ function initEasterEgg() {
     }
   });
 }
+
+/**
+ * Menu Category Filtering: Smoothly switches between Coffee, Tea, and Bakes.
+ */
+function initMenuFiltering() {
+  const filterButtons = document.querySelectorAll('.filter-tab-btn');
+  const menuCards = document.querySelectorAll('.menu-card');
+
+  if (!filterButtons.length || !menuCards.length) return;
+
+  filterButtons.forEach(button => {
+    button.addEventListener('click', () => {
+      const selectedCategory = button.getAttribute('data-filter');
+
+      // Update Tab ARIA & active styling
+      filterButtons.forEach(btn => {
+        btn.classList.remove('is-active');
+        btn.setAttribute('aria-selected', 'false');
+      });
+      button.classList.add('is-active');
+      button.setAttribute('aria-selected', 'true');
+
+      // Filter Cards with a calm, unhurried transition
+      menuCards.forEach(card => {
+        const itemCategory = card.getAttribute('data-category');
+
+        if (selectedCategory === 'all' || itemCategory === selectedCategory) {
+          card.classList.remove('is-hidden');
+          // Ensure newly unhidden elements are marked revealed
+          card.classList.add('is-revealed');
+        } else {
+          card.classList.add('is-hidden');
+        }
+      });
+    });
+  });
+}
+
 
