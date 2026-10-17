@@ -9,6 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initScrollReveals();
   initEasterEgg();
   initMenuFiltering();
+  initCopyAddress();
 });
 
 /**
@@ -244,5 +245,49 @@ function initMenuFiltering() {
     });
   });
 }
+
+/**
+ * Copy Address helper with quiet tactile feedback
+ */
+function initCopyAddress() {
+  const copyBtn = document.getElementById('copy-address-btn');
+  const copyText = document.getElementById('copy-btn-text');
+  const checkIcon = document.getElementById('copy-check-icon');
+
+  if (!copyBtn || !copyText) return;
+
+  const fullAddress = 'Mandora, 5th Floor, IBM Building, No. 48 Nawam Mawatha, Colombo 02, Sri Lanka';
+
+  copyBtn.addEventListener('click', async () => {
+    try {
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        await navigator.clipboard.writeText(fullAddress);
+      } else {
+        // Fallback for environments without modern clipboard permissions
+        const tempInput = document.createElement('textarea');
+        tempInput.value = fullAddress;
+        tempInput.style.position = 'fixed';
+        tempInput.style.opacity = '0';
+        document.body.appendChild(tempInput);
+        tempInput.select();
+        document.execCommand('copy');
+        document.body.removeChild(tempInput);
+      }
+
+      copyText.textContent = 'Address Copied';
+      if (checkIcon) checkIcon.style.display = 'inline';
+      copyBtn.style.borderColor = 'var(--color-accent)';
+
+      setTimeout(() => {
+        copyText.textContent = 'Copy Address';
+        if (checkIcon) checkIcon.style.display = 'none';
+        copyBtn.style.borderColor = '';
+      }, 2400);
+    } catch (err) {
+      console.warn('Clipboard write prevented:', err);
+    }
+  });
+}
+
 
 
