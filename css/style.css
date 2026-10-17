@@ -1,0 +1,158 @@
+:root {
+  /* ==========================================================================
+     Color Palette (Calm, Earthy, Warm Neutrals)
+     No harsh pure black or pure white.
+     ========================================================================== */
+  --color-bg-base: #FAF7F2;       /* Warm Oatmeal / Ceramic Cream */
+  --color-bg-surface: #F3ECE2;    /* Soft Latte Warmth */
+  --color-bg-subtle: #EBE1D4;     /* Muted Warm Sand */
+  --color-text-main: #2C221E;     /* Deep Roasted Espresso */
+  --color-text-muted: #6E6157;    /* Soft Roast Umber */
+  --color-text-faint: #9E9186;    /* Gentle Whisper Tone */
+  --color-accent: #7C8D78;        /* Highland Sage Green */
+  --color-accent-soft: #EDF1EC;   /* Pale Sage Mist */
+  --color-border: #E6DDD2;        /* Soft Organic Divider */
+  --color-border-subtle: #F0E8DE; /* Faint Separator */
+
+  /* ==========================================================================
+     Typography
+     Headings: Cormorant Garamond (Graceful, serene serif)
+     Body: Plus Jakarta Sans (Readable humanist sans-serif)
+     ========================================================================== */
+  --font-display: 'Cormorant Garamond', Georgia, serif;
+  --font-body: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+
+  /* Font Sizes & Rhythm (16–18px base with 1.75 line-height) */
+  --font-size-xs: 0.8125rem;   /* ~13px */
+  --font-size-sm: 0.9375rem;   /* ~15px */
+  --font-size-base: 1.0625rem; /* ~17px (Core body) */
+  --font-size-md: 1.25rem;     /* ~20px */
+  --font-size-lg: 1.625rem;    /* ~26px */
+  --font-size-xl: 2.125rem;    /* ~34px */
+  --font-size-2xl: 2.875rem;   /* ~46px */
+  --font-size-3xl: 3.75rem;    /* ~60px */
+
+  --font-weight-light: 300;
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+
+  --line-height-tight: 1.25;
+  --line-height-display: 1.15;
+  --line-height-body: 1.75;
+
+  --letter-spacing-display: -0.015em;
+  --letter-spacing-body: 0.01em;
+  --letter-spacing-wide: 0.08em;
+
+  /* ==========================================================================
+     Spacing & Layout (Generous whitespace for room to breathe)
+     ========================================================================== */
+  --space-2xs: 0.375rem; /* 6px */
+  --space-xs: 0.75rem;   /* 12px */
+  --space-sm: 1.25rem;   /* 20px */
+  --space-md: 2rem;      /* 32px */
+  --space-lg: 3.25rem;   /* 52px */
+  --space-xl: 5rem;      /* 80px */
+  --space-2xl: 7.5rem;   /* 120px */
+  --space-3xl: 11rem;    /* 176px */
+
+  --container-max-width: 1160px;
+  --container-narrow-width: 740px;
+  --container-padding: 1.5rem;
+
+  /* ==========================================================================
+     Timing & Transitions (Slow, gentle, unhurried easing: 400–900ms)
+     ========================================================================== */
+  --ease-gentle: cubic-bezier(0.25, 1, 0.5, 1);
+  --ease-slow: cubic-bezier(0.16, 1, 0.3, 1);
+
+  --duration-fast: 300ms;
+  --duration-medium: 550ms;
+  --duration-slow: 850ms;
+
+  --transition-fade: opacity var(--duration-medium) var(--ease-gentle);
+  --transition-color: color var(--duration-fast) var(--ease-gentle),
+                      background-color var(--duration-fast) var(--ease-gentle),
+                      border-color var(--duration-fast) var(--ease-gentle);
+  --transition-transform: transform var(--duration-medium) var(--ease-gentle);
+
+  /* Borders & Radius */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 16px;
+  --radius-full: 9999px;
+}
+
+/* ==========================================================================
+   CSS Reset & Base Rules
+   ========================================================================== */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 100%;
+  scroll-behavior: smooth;
+  text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  background-color: var(--color-bg-base);
+}
+
+body {
+  min-height: 100vh;
+  font-family: var(--font-body);
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--line-height-body);
+  letter-spacing: var(--letter-spacing-body);
+  color: var(--color-text-main);
+  background-color: var(--color-bg-base);
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Accessibility: Keyboard Focus Indicator */
+:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 4px;
+  border-radius: var(--radius-sm);
+}
+
+/* Skip Navigation Link */
+.skip-link {
+  position: absolute;
+  top: -100px;
+  left: 1.5rem;
+  padding: var(--space-xs) var(--space-sm);
+  background-color: var(--color-text-main);
+  color: var(--color-bg-base);
+  font-family: var(--font-body);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  border-radius: var(--radius-sm);
+  text-decoration: none;
+  z-index: 9999;
+  transition: top var(--duration-fast) var(--ease-gentle);
+}
+
+.skip-link:focus {
+  top: 1.5rem;
+}
+
+/* Respect Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
